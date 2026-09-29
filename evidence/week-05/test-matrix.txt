@@ -1,0 +1,89 @@
+No. 1
+Test        : Load form
+Langkah     : Buka registration.php
+Hasil yang diharapkan : Form tampil tanpa error
+Status (Lulus / Perlu Perbaikan) : Lulus
+Catatan     : Form termuat lengkap dengan semua kontrol (text, email, tel, select, radio, checkbox, textarea).
+
+No. 2
+Test        : Required
+Langkah     : Kirim form kosong
+Hasil yang diharapkan : Browser menahan field wajib
+Status (Lulus / Perlu Perbaikan) : Lulus
+Catatan     : Atribut required ada pada name, email, phone, study_program, course, dan radio participant_type sehingga browser menahan submit.
+
+
+No. 3
+Test        : Email
+Langkah     : Isi email dengan teks salah format, misalnya "abc"
+Hasil yang diharapkan : Browser meminta format email yang benar
+Status (Lulus / Perlu Perbaikan) : Lulus
+Catatan     : Field email memakai type="email" sehingga validasi format bawaan browser aktif.
+
+No. 4
+Test        : Nama pendek
+Langkah     : Isi nama hanya dua karakter
+Hasil yang diharapkan : Atribut minlength mencegah submit
+Status (Lulus / Perlu Perbaikan) : Lulus
+Catatan     : Field name memiliki minlength="3" sehingga input dua karakter ditahan browser.
+
+
+No. 5
+Test        : GET
+Langkah     : Ubah method form ke GET lalu submit data latihan
+Hasil yang diharapkan : Parameter data terlihat pada URL (query string)
+Status (Lulus / Perlu Perbaikan) : Lulus
+Catatan     : Saat method diset get, seluruh field (termasuk source=week-05) muncul sebagai query string di address bar.
+
+
+No. 6
+Test        : POST
+Langkah     : Kembalikan method ke POST, lalu submit lagi
+Hasil yang diharapkan : Data form tidak tampil sebagai query string di URL
+Status (Lulus / Perlu Perbaikan) : Lulus (setelah perbaikan)
+Catatan     : Sebelumnya method tertulis "get" (sisa eksperimen Bagian F, lupa dikembalikan) sehingga process-registration.php yang membaca $_POST menerima data kosong. Sudah diperbaiki menjadi method="post"; URL bersih tanpa query string setelah submit.
+
+
+No. 7
+Test        : Radio
+Langkah     : Pilih salah satu jenis peserta (Mahasiswa / Umum)
+Hasil yang diharapkan : Nilai yang dipilih muncul di halaman ringkasan
+Status (Lulus / Perlu Perbaikan) : Lulus
+Catatan     : Kedua radio berbagi name="participant_type" sehingga hanya satu nilai terkirim; process-registration.php membaca $_POST['participant_type'] dan menampilkannya lewat e().
+
+
+No. 8
+Test        : Checkbox
+Langkah     : Pilih dua minat tambahan sekaligus
+Hasil yang diharapkan : Dua nilai muncul digabung pada ringkasan hasil
+Status (Lulus / Perlu Perbaikan) : Lulus
+Catatan     : Ketiga checkbox memakai name="interests[]" sehingga PHP menerima array; implode(', ', $interests) menggabungkan nilai yang dipilih menjadi satu teks.
+
+No. 9
+Test        : Textarea
+Langkah     : Isi catatan singkat pada kolom catatan
+Hasil yang diharapkan : Isi catatan ditampilkan kembali dengan aman (ter-escape)
+Status (Lulus / Perlu Perbaikan) : Lulus
+Catatan     : Nilai textarea dibaca lewat $_POST['note'] lalu di-escape fungsi e() sebelum ditampilkan, sehingga aman dari karakter HTML khusus.
+
+
+No. 10
+Test        : Hidden
+Langkah     : Submit form seperti biasa
+Hasil yang diharapkan : Nilai hidden field "source" (week-05) diterima dan tampil di ringkasan
+Status (Lulus / Perlu Perbaikan) : Lulus (setelah perbaikan)
+Catatan     : Sebelumnya kolom Sumber kosong karena method masih GET sedangkan PHP membaca $_POST. Setelah method diperbaiki ke POST, nilai "week-05" tampil sesuai atribut value pada hidden input.
+
+No. 11
+Test        : Mobile
+Langkah     : Uji tampilan pada lebar layar sekitar 360px (DevTools)
+Hasil yang diharapkan : Form tampil satu kolom, tidak ada horizontal scroll
+Status (Lulus / Perlu Perbaikan) : Lulus
+Catatan     : style.css memiliki media query max-width yang mengubah .form-grid menjadi satu kolom dan menyesuaikan padding pada layar kecil.
+
+No. 12
+Test        : Navigasi
+Langkah     : Klik Beranda -> Katalog -> Daftar secara berurutan
+Hasil yang diharapkan : Semua link menuju halaman tujuan yang benar
+Status (Lulus / Perlu Perbaikan) : Lulus
+Catatan     : Link nav mengarah ke index.php, index.php#katalog, dan registration.php sesuai struktur navigasi yang diminta panduan.
