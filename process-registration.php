@@ -123,17 +123,10 @@ function e($value): string
                 </dd>
 
             </dl>
-
-
-            <!-- Tombol kembali -->
-
-            <a
-                class="btn-link"
-                href="registration.php"
-            >
-                Kembali ke Form
-            </a>
-
+                <div class="extra-actions">
+                    <a href="registration.php" class="btn-link">Isi Lagi</a>
+                    <a href="index.php" class="btn-secondary">Beranda</a>
+                </div>
         </section>
 
     </main>

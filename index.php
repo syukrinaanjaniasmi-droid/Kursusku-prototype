@@ -1,13 +1,8 @@
 <?php
-
 require_once __DIR__ . '/helpers.php';
-
 $siteName = 'KursusKu UIN';
-
 $tagline = 'Belajar, daftar, dan kelola kursus dalam satu tempat.';
-
 $year = date('Y');
-
 $courses = [
 
     [
@@ -76,142 +71,91 @@ $courses = [
     <meta charset="utf-8">
 
     <meta name="viewport" content="width=device-width, initial-scale=1">
-
     <link rel="stylesheet" href="assets/css/style.css">
-
     <title><?= htmlspecialchars($siteName) ?></title>
 
 </head>
 
 <body>
 
-    <!-- ================= HEADER ================= -->
-
     <header class="site-header">
-
         <div class="container nav-wrap">
-
-            <a class="brand" href="index.php">
-                <?= htmlspecialchars($siteName) ?>
-            </a>
-
-            <nav aria-label="Navigasi utama">
-
+        <a class="brand" href="#beranda"><?= htmlspecialchars($siteName) ?></a>
+          <nav class="navbar" aria-label="Navigasi utama">
+                <a href="#beranda">Beranda</a>
+                <a href="#keunggulan">Keunggulan</a>
                 <a href="#katalog">Katalog</a>
+                <a href="#alur">Cara Daftar</a>
+                <a href="#media">Media</a>
+                <a href="#kontak">Kontak</a>
+                <a href="registration.php">Form P5</a>
+                <a href="register.php">Daftar P6</a>
+                <a href="history.php">History</a>
 
-                <a href="#pendaftaran">Pendaftaran</a>
-
-            </nav>
+</nav>
 
         </div>
-
     </header>
 
-
     <main>
-
-        <!-- ================= HERO ================= -->
-
         <section id="hero">
-
             <h1>
                 <?= htmlspecialchars($tagline) ?>
             </h1>
-
             <p>
-                Temukan kursus teknologi yang relevan untuk
-                meningkatkan keterampilan Anda.
-            </p>
-
+                Temukan kursus teknologi yang relevan untuk meningkatkan keterampilan melalui pembelajaran bertahap, latihan terarah, dan proyek nyata.</p>
+        
             <div>
-
-                <a href="#katalog">
-                    Lihat Katalog Kursus
-                </a>
-
-                <a href="fee-calculator.php">
-                    Lihat Estimasi Biaya
-                </a>
-
+                <a href="#katalog">Lihat Katalog Kursus</a>
+                <a href="register.php" class="button">Daftar Sekarang</a>
+                <a href="fee-calculator.php" class="button button-secondary">Hitung Estimasi Biaya</a>
             </div>
-
         </section>
 
-
-        <!-- ================= KEUNGGULAN ================= -->
-
         <section id="keunggulan">
-
             <h2>Mengapa Memilih KursusKu?</h2>
-
             <article>
-
                 <h3>Materi Terarah</h3>
-
                 <p>
                     Materi disusun bertahap dari dasar hingga praktik.
                 </p>
-
             </article>
 
             <article>
-
                 <h3>Belajar dengan Proyek</h3>
-
                 <p>
                     Setiap tahap menghasilkan bagian nyata dari aplikasi.
                 </p>
-
             </article>
 
             <article>
 
                 <h3>Pendampingan Praktik</h3>
-
                 <p>
-                    Mahasiswa belajar melalui demonstrasi,
-                    latihan, dan evaluasi.
+                    Mahasiswa belajar melalui demonstrasi, latihan, dan evaluasi.
                 </p>
 
             </article>
 
         </section>
 
-
-        <!-- ================= KATALOG ================= -->
-
         <section id="katalog">
-
             <h2>Katalog Kursus</h2>
-
             <table>
-
                 <thead>
-
                     <tr>
-
                         <th>Kode</th>
-
                         <th>Nama Kursus</th>
-
                         <th>Biaya</th>
-
                         <th>Mulai</th>
-
                         <th>Sisa Kursi</th>
-
                         <th>Status</th>
-
                     </tr>
-
                 </thead>
-
                 <tbody>
 
                     <?php foreach ($courses as $course): ?>
-
                         <?php
-
                         $status = statusKursus(
                             $course['quota'],
                             $course['registered']
@@ -228,395 +172,70 @@ $courses = [
                             <td>
                                 <?= htmlspecialchars($course['code']) ?>
                             </td>
-
                             <td>
                                 <?= htmlspecialchars(trim($course['name'])) ?>
                             </td>
-
                             <td>
                                 <?= rupiah($course['fee']) ?>
                             </td>
-
                             <td>
                                 <?= formatTanggal($course['start_date']) ?>
                             </td>
-
                             <td>
-
                                 <?= sisaKursi(
                                     $course['quota'],
                                     $course['registered']
                                 ) ?>
-
                             </td>
-
                             <td>
 
                                 <span class="<?= $statusClass ?>">
                                     <?= htmlspecialchars($status) ?>
                                 </span>
-
                             </td>
 
                         </tr>
-
                     <?php endforeach; ?>
-
                 </tbody>
-
             </table>
-
         </section>
 
 
-        <!-- ================= ALUR PENDAFTARAN ================= -->
-
         <section id="alur">
-
             <h2>Cara Mendaftar</h2>
-
             <ol>
-
                 <li>
                     Pilih kursus yang diminati.
                 </li>
-
                 <li>
                     Isi form pendaftaran.
                 </li>
-
                 <li>
                     Periksa kembali data.
                 </li>
-
                 <li>
                     Kirim pendaftaran dan tunggu konfirmasi.
                 </li>
-
             </ol>
 
         </section>
 
-
-        <!-- ================= FORM PENDAFTARAN ================= -->
-
-        <section id="pendaftaran">
-
-            <h2>Form Pendaftaran Kursus</h2>
-
-            <div class="form-card">
-
-                <form action="process-registration.php" method="post">
-
-                    <div class="form-grid">
-
-                        <!-- NAMA -->
-
-                        <div class="form-group">
-
-                            <label for="nama">
-                                Nama Lengkap
-                            </label>
-
-                            <input
-                                type="text"
-                                id="nama"
-                                name="name"
-                                placeholder="Masukkan nama lengkap"
-                                required
-                            >
-
-                        </div>
-
-
-                        <!-- EMAIL -->
-
-                        <div class="form-group">
-
-                            <label for="email">
-                                Email
-                            </label>
-
-                            <input
-                                type="email"
-                                id="email"
-                                name="email"
-                                placeholder="Masukkan email"
-                                required
-                            >
-
-                        </div>
-
-                    </div>
-
-
-                    <div class="form-grid">
-
-                        <!-- TELEPON -->
-
-                        <div class="form-group">
-
-                            <label for="telepon">
-                                No. Telepon
-                            </label>
-
-                            <input
-                                type="tel"
-                                id="telepon"
-                                name="phone"
-                                placeholder="08xxxxxxxxxx"
-                                required
-                            >
-
-                        </div>
-
-
-                        <!-- PROGRAM STUDI -->
-
-                        <div class="form-group">
-
-                            <label for="program_studi">
-                                Program Studi
-                            </label>
-
-                            <input
-                                type="text"
-                                id="program_studi"
-                                name="study_program"
-                                placeholder="Masukkan program studi"
-                                required
-                            >
-
-                        </div>
-
-                    </div>
-
-
-                    <!-- KURSUS -->
-
-                    <div class="form-group">
-
-                        <label for="kursus">
-                            Pilih Kursus
-                        </label>
-
-                        <select
-                            id="kursus"
-                            name="course"
-                            required
-                        >
-
-                            <option value="">
-                                -- Pilih Kursus --
-                            </option>
-
-                            <?php foreach ($courses as $course): ?>
-
-                                <option value="<?= htmlspecialchars($course['code']) ?>">
-
-                                    <?= htmlspecialchars($course['name']) ?>
-
-                                </option>
-
-                            <?php endforeach; ?>
-
-                        </select>
-
-                    </div>
-
-
-                    <!-- JENIS KELAMIN -->
-
-                    <fieldset class="form-group">
-
-                        <legend>
-                            Jenis Kelamin
-                        </legend>
-
-                        <label class="choice">
-
-                            <input
-                                type="radio"
-                                name="gender"
-                                value="Laki-laki"
-                                required
-                            >
-
-                            Laki-laki
-
-                        </label>
-
-
-                        <label class="choice">
-
-                            <input
-                                type="radio"
-                                name="gender"
-                                value="Perempuan"
-                            >
-
-                            Perempuan
-
-                        </label>
-
-                    </fieldset>
-
-
-                    <!-- JENIS PESERTA -->
-
-                    <fieldset class="form-group">
-
-                        <legend>
-                            Jenis Peserta
-                        </legend>
-
-                        <label class="choice">
-
-                            <input
-                                type="radio"
-                                name="participant_type"
-                                value="mahasiswa"
-                                required
-                            >
-
-                            Mahasiswa
-
-                        </label>
-
-
-                        <label class="choice">
-
-                            <input
-                                type="radio"
-                                name="participant_type"
-                                value="umum"
-                            >
-
-                            Umum
-
-                        </label>
-
-                    </fieldset>
-
-
-                    <!-- MINAT TAMBAHAN -->
-
-                    <fieldset class="form-group">
-
-                        <legend>
-                            Minat Tambahan
-                        </legend>
-
-                        <label class="choice">
-
-                            <input
-                                type="checkbox"
-                                name="interests[]"
-                                value="ui-ux"
-                            >
-
-                            UI/UX
-
-                        </label>
-
-
-                        <label class="choice">
-
-                            <input
-                                type="checkbox"
-                                name="interests[]"
-                                value="database"
-                            >
-
-                            Database
-
-                        </label>
-
-
-                        <label class="choice">
-
-                            <input
-                                type="checkbox"
-                                name="interests[]"
-                                value="backend"
-                            >
-
-                            Backend
-
-                        </label>
-
-                    </fieldset>
-
-
-                    <!-- KETERANGAN -->
-
-                    <div class="form-group">
-
-                        <label for="pesan">
-                            Keterangan
-                        </label>
-
-                        <textarea
-                            id="pesan"
-                            name="note"
-                            rows="4"
-                            placeholder="Tuliskan keterangan jika diperlukan..."
-                        ></textarea>
-
-                        <small class="help">
-
-                            Pastikan data yang dimasukkan sudah benar.
-
-                        </small>
-
-                    </div>
-
-
-                    <!-- BUTTON -->
-
-                    <button
-                        type="submit"
-                        class="btn-primary"
-                    >
-
-                        Daftar Sekarang
-
-                    </button>
-
-                </form>
-
-            </div>
-
-        </section>
-
-
-        <!-- ================= MEDIA ================= -->
-
         <section id="media">
-
             <h2>Kenali Program Kami</h2>
-
             <img
                 src="assets/images/hero-kursus.jpg"
                 alt="Mahasiswa sedang mengikuti kegiatan kursus komputer"
                 width="640"
             >
-
             <h3>Video Singkat</h3>
-
             <video controls width="640">
-
                 <source
                     src="assets/video/intro-kursus.mp4"
                     type="video/mp4"
                 >
-
                 Browser Anda tidak mendukung video HTML5.
-
             </video>
-
             <p>
-
                 <a
                     href="https://www.php.net/"
                     target="_blank"
@@ -624,42 +243,23 @@ $courses = [
                 >
                     Dokumentasi PHP
                 </a>
-
             </p>
-
         </section>
-
-
-        <!-- ================= KONTAK ================= -->
 
         <section id="kontak">
-
             <h2>Kontak</h2>
-
             <p>
-                Email: syukrinaanjaniasmi@gmail.com
-            </p>
-
+                Email: syukrinaanjaniasmi@gmail.com</p>
             <p>
-                Alamat: Tabek Panjang, Baso
-            </p>
-
+                Alamat: Tabek Panjang, Baso</p>
         </section>
-
     </main>
 
-
-    <!-- ================= FOOTER ================= -->
-
     <footer>
-
         <small>
             © <?= $year ?>
             <?= htmlspecialchars($siteName) ?>
         </small>
-
     </footer>
-
 </body>
-
 </html>

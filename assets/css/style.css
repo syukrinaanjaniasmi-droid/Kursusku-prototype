@@ -10,19 +10,16 @@ html {
 
 body {
     font-family: "Plus Jakarta Sans", "Segoe UI", Arial, sans-serif;
-    background: linear-gradient(180deg, #eaf6ff 0%, #dceefc 40%, #cfe6fb 100%);
+    background: linear-gradient(
+    180deg, #eaf6ff 0%, #dceefc 40%, #cfe6fb 100%
+    );
     color: #263238;
     line-height: 1.7;
     font-size: 16px;
     -webkit-font-smoothing: antialiased;
 }
 
-/*  TIPOGRAFI HEADING */
-h1, h2, h3,
-.brand,
-#hero h1,
-.page-intro h1,
-.alert-success h1 {
+h1, h2, h3, .brand, #hero h1, .page-intro h1, .alert-success h1 {
     font-family: "Sora", "Segoe UI", Arial, sans-serif;
     font-weight: 700;
     letter-spacing: -0.02em;
@@ -34,35 +31,59 @@ h1, h2, h3,
     padding: 0 8%;
 }
 
-/*  HEADER  */
 .site-header {
-    background: linear-gradient(135deg, #123c69, #1769aa);
-    padding: 18px 0;
+    width: 100%;
+    background: linear-gradient(
+    135deg, #054c97, #2f86cd
+    );
     position: sticky;
     top: 0;
     z-index: 1000;
     box-shadow: 0 4px 18px rgba(0, 0, 0, 0.15);
+    padding: 0;
 }
 
 .nav-wrap {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 17px 8%;
     display: flex;
     align-items: center;
-    gap: 28px;
+    justify-content: space-between;
+    min-height: 78px;
+    flex-wrap: wrap;
 }
 
 .site-header .brand {
+    width: 100%;
     color: white;
     text-decoration: none;
-    font-size: 21px;
+    font-size: 22px;
     font-weight: 800;
     letter-spacing: -0.01em;
-    margin-right: auto;
+    display: flex;
+    align-items: center;
+    margin: 0;
+}
+  
+.site-header .brand:hover {
+    color: #1c4d5b;
 }
 
 .site-header nav {
+    width: 100%;
     display: flex;
-    gap: 24px;
+    align-items: center;
+    justify-content: center;
+    gap: 28px;
+    min-height: 48px;
+    margin: 0;
+    padding: 0 8%;
+    background: rgba(9, 66, 105, 0.45);
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
 }
+
+/* LINK NAVIGASI */
 
 .site-header nav a {
     display: inline-block;
@@ -70,28 +91,57 @@ h1, h2, h3,
     text-decoration: none;
     font-size: 13.5px;
     font-weight: 600;
-    letter-spacing: 0.02em;
-    text-transform: uppercase;
-    padding: 10px 18px;
-    border-radius: 10px;
-    background: rgba(255, 255, 255, 0.08);
-    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.18);
-    transition: 0.3s ease;
+    letter-spacing: 0.01em;
+    text-transform: none;
+    padding: 12px 0;
+    border-radius: 0;
+    background: transparent;
+    box-shadow: none;
+    transition: all 0.3s ease;
+    white-space: nowrap;
 }
+
+/* HOVER */
 
 .site-header nav a:hover {
-    color: #123c69;
-    background: #8ee7ff;
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
-    transform: translateY(-2px);
+    color: #8ee7ff;
+    background: transparent;
+    box-shadow: none;
+    transform: translateY(-1px);
 }
 
-/* MAIN  */
+/* =========================================
+TOMBOL ESTIMASI BIAYA (hanya link ber-class nav-cta)
+========================================= */
+
+.site-header nav a.nav-cta {
+    background: white;
+    color: #1769aa;
+    padding: 9px 18px;
+    border-radius: 9px;
+    font-weight: 700;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+}
+
+.site-header nav a.nav-cta:hover {
+    background: #8ee7ff;
+    color: #123c69;
+    transform: translateY(-2px);
+    box-shadow: 0 7px 16px rgba(0, 0, 0, 0.18);
+}
+
+/* =========================================
+MAIN
+========================================= */
+
 main {
     width: 100%;
 }
 
-/* HERO (index.php)  */
+/* =========================================
+HERO
+========================================= */
+
 #hero {
     min-height: 520px;
     padding: 110px 8%;
@@ -99,11 +149,15 @@ main {
     flex-direction: column;
     justify-content: center;
     align-items: flex-start;
-    background: linear-gradient(135deg, #29b6f6, #4fc3f7 55%, #81d4fa);
+    background: linear-gradient(
+    135deg, #91c8e2, #59bdec 55%, #1488bd
+    );
     color: white;
     position: relative;
     overflow: hidden;
 }
+
+/* LINGKARAN HERO */
 
 #hero::before {
     content: "";
@@ -111,7 +165,7 @@ main {
     width: 400px;
     height: 400px;
     border-radius: 50%;
-    background: rgba(255, 255, 255, 0.08);
+    background: rgba(216, 230, 232, 0.08);
     right: -120px;
     top: -120px;
 }
@@ -122,10 +176,12 @@ main {
     width: 250px;
     height: 250px;
     border-radius: 50%;
-    background: rgba(142, 231, 255, 0.12);
+    background: rgba(229, 234, 236, 0.12);
     left: -100px;
     bottom: -100px;
 }
+
+/* HERO TITLE */
 
 #hero h1 {
     max-width: 800px;
@@ -137,15 +193,19 @@ main {
     z-index: 1;
 }
 
+/* HERO TEXT */
+
 #hero p {
     max-width: 700px;
     font-size: 18px;
     font-weight: 400;
     margin-bottom: 30px;
-    color: #e8f5ff;
+    color: #0b0c0e;
     position: relative;
     z-index: 1;
 }
+
+/* HERO BUTTON */
 
 #hero a {
     display: inline-block;
@@ -154,7 +214,7 @@ main {
     margin-bottom: 10px;
     border-radius: 10px;
     background: white;
-    color: #1769aa;
+    color: #031b2f;
     text-decoration: none;
     font-weight: 700;
     letter-spacing: 0.01em;
@@ -170,7 +230,10 @@ main {
     color: #123c69;
 }
 
-/*  SECTION UMUM  */
+/* =========================================
+SECTION UMUM
+========================================= */
+
 section {
     max-width: 1200px;
     margin: 0 auto;
@@ -192,11 +255,20 @@ section h2::after {
     height: 4px;
     margin: 12px auto 0;
     border-radius: 5px;
-    background: linear-gradient(90deg, #1769aa, #8ee7ff);
+    background: linear-gradient(
+    90deg, #1769aa, #8ee7ff
+    );
 }
 
-/*KEUNGGULAN (index.php)  */
-#keunggulan { background: linear-gradient(180deg, #dceefc, #bbdefb); }
+/* =========================================
+KEUNGGULAN
+========================================= */
+
+#keunggulan {
+    background: linear-gradient(
+    180deg, #dceefc, #bbdefb
+    );
+}
 
 #keunggulan article {
     width: 31%;
@@ -225,9 +297,15 @@ section h2::after {
     font-weight: 700;
     margin-bottom: 12px;
 }
-#keunggulan p { color: #607d8b; }
 
-/* CARA MENDAFTAR (index.php) */
+#keunggulan p {
+    color: #607d8b;
+}
+
+/* =========================================
+CARA MENDAFTAR
+========================================= */
+
 #alur {
     background: white;
     border-radius: 24px;
@@ -255,7 +333,9 @@ section h2::after {
     font-weight: 500;
 }
 
-#alur li:last-child { margin-bottom: 0; }
+#alur li:last-child {
+    margin-bottom: 0;
+}
 
 #alur li::before {
     content: counter(langkah);
@@ -275,21 +355,34 @@ section h2::after {
     font-weight: 700;
 }
 
-/* KATALOG (index.php)  */
-#katalog { background: linear-gradient(180deg, #bbdefb, #9cd3fb); }
+/* =========================================
+KATALOG
+========================================= */
+/* =========================================
+KATALOG
+========================================= */
+
+#katalog {
+    background: linear-gradient(
+        180deg, #bbdefb, #9cd3fb
+    );
+}
 
 #katalog table {
     width: 100%;
-    border-collapse: separate;
-    border-spacing: 0;
-    overflow: hidden;
-    border-radius: 15px;
+    border-collapse: collapse;
+    margin-top: 20px;
     background: white;
+    border: 1px solid #cbd8e3;
+    border-radius: 15px;
+    overflow: hidden;
     box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
 }
 
 #katalog th {
-    background: linear-gradient(135deg, #123c69, #1769aa);
+    background: linear-gradient(
+        135deg, #123c69, #1769aa
+    );
     color: white;
     padding: 17px 14px;
     text-align: left;
@@ -297,18 +390,30 @@ section h2::after {
     font-weight: 700;
     letter-spacing: 0.03em;
     text-transform: uppercase;
+    border: 1px solid #123c69;
 }
 
 #katalog td {
     padding: 16px 14px;
-    border-bottom: 1px solid #e9eef3;
+    border: 1px solid #d6e0e8;
     color: #455a64;
     font-weight: 500;
 }
 
-#katalog tbody tr { transition: 0.25s ease; }
-#katalog tbody tr:hover { background: #eef9ff; transform: scale(1.005); }
-#katalog tbody tr:last-child td { border-bottom: none; }
+#katalog tbody tr {
+    transition: 0.25s ease;
+}
+
+#katalog tbody tr:nth-child(even) {
+    background: #f7fbff;
+}
+
+#katalog tbody tr:hover {
+    background: #eef9ff;
+}
+/* =========================================
+BADGE
+========================================= */
 
 .badge-full, .badge-available {
     display: inline-block;
@@ -319,12 +424,26 @@ section h2::after {
     letter-spacing: 0.02em;
 }
 
-.badge-available { background: #dff8ea; color: #16834b; border: 1px solid #b8edcf; }
-.badge-full { background: #ffe4e4; color: #d93030; border: 1px solid #ffc5c5; }
+.badge-available {
+    background: #dff8ea;
+    color: #16834b;
+    border: 1px solid #b8edcf;
+}
 
-/* PAGE INTRO */
+.badge-full {
+    background: #ffe4e4;
+    color: #d93030;
+    border: 1px solid #ffc5c5;
+}
+
+/* =========================================
+PAGE INTRO
+========================================= */
+
 .page-intro {
-    background: linear-gradient(180deg, #cfe6fb, #9cd3fb);
+    background: linear-gradient(
+    180deg, #cfe6fb, #9cd3fb
+    );
     text-align: center;
     padding: 60px 0 40px;
 }
@@ -353,7 +472,10 @@ section h2::after {
     margin: 0 auto;
 }
 
-/*  FORM CARD */
+/* =========================================
+FORM CARD
+========================================= */
+
 .form-card {
     max-width: 750px;
     margin: 40px auto 80px;
@@ -364,24 +486,27 @@ section h2::after {
     border: 1px solid #e1edf7;
 }
 
-.registration-form { text-align: left; }
+.registration-form {
+    text-align: left;
+}
 
-/* Baris 2 kolom: Nomor HP / Program Studi */
+/* FORM GRID */
+
 .form-grid {
     display: flex;
     gap: 20px;
 }
 
-.form-grid .form-group { flex: 1; }
+.form-grid .form-group {
+    flex: 1;
+}
 
-.form-group,
-fieldset.form-group {
+.form-group, fieldset.form-group {
     margin-bottom: 20px;
     border: none;
 }
 
-.form-group label:not(.choice),
-fieldset.form-group legend {
+.form-group label:not(.choice), fieldset.form-group legend {
     display: block;
     font-weight: 700;
     color: #123c69;
@@ -390,12 +515,11 @@ fieldset.form-group legend {
     letter-spacing: 0.01em;
 }
 
-/* INPUT / SELECT / TEXTAREA*/
-.form-group input[type="text"],
-.form-group input[type="email"],
-.form-group input[type="tel"],
-.form-group select,
-.form-group textarea {
+/* =========================================
+INPUT
+========================================= */
+
+.form-group input[type="text"], .form-group input[type="email"], .form-group input[type="tel"], .form-group select, .form-group textarea {
     width: 100%;
     padding: 12px 14px;
     border: 1.5px solid #dbe8f2;
@@ -407,11 +531,12 @@ fieldset.form-group legend {
     transition: 0.25s ease;
 }
 
-.form-group textarea { resize: vertical; min-height: 100px; }
+.form-group textarea {
+    resize: vertical;
+    min-height: 100px;
+}
 
-.form-group input:focus,
-.form-group select:focus,
-.form-group textarea:focus {
+.form-group input:focus, .form-group select:focus, .form-group textarea:focus {
     outline: none;
     border-color: #1769aa;
     background: white;
@@ -425,7 +550,10 @@ fieldset.form-group legend {
     color: #90a4ae;
 }
 
-/*  RADIO / CHECKBOX (label.choice) */
+/* =========================================
+RADIO / CHECKBOX
+========================================= */
+
 fieldset.form-group {
     display: flex;
     flex-wrap: wrap;
@@ -453,10 +581,12 @@ label.choice {
     color: #455a64;
 }
 
-label.choice:hover { border-color: #8ee7ff; background: #eef9ff; }
+label.choice:hover {
+    border-color: #8ee7ff;
+    background: #eef9ff;
+}
 
-label.choice input[type="radio"],
-label.choice input[type="checkbox"] {
+label.choice input[type="radio"], label.choice input[type="checkbox"] {
     width: 16px;
     height: 16px;
     accent-color: #1769aa;
@@ -470,14 +600,19 @@ label.choice:has(input:checked) {
     font-weight: 700;
 }
 
-/*  BUTTON KIRIM */
+/* =========================================
+BUTTON KIRIM
+========================================= */
+
 .btn-primary {
     width: 100%;
     padding: 15px;
     margin-top: 10px;
     border: none;
     border-radius: 10px;
-    background: linear-gradient(135deg, #123c69, #1769aa);
+    background: linear-gradient(
+    135deg, #123c69, #1769aa
+    );
     color: white;
     font-size: 16px;
     font-weight: 700;
@@ -490,17 +625,26 @@ label.choice:has(input:checked) {
 .btn-primary:hover {
     transform: translateY(-3px);
     box-shadow: 0 10px 24px rgba(23, 105, 170, 0.35);
-    background: linear-gradient(135deg, #1769aa, #123c69);
+    background: linear-gradient(
+    135deg, #1769aa, #123c69
+    );
 }
 
-/* HALAMAN HASIL (process-registration.php) */
+/* =========================================
+HALAMAN HASIL
+========================================= */
 
 .result-page {
     padding: 60px 0 80px;
-    background: linear-gradient(180deg, #cfe6fb, #9cd3fb);
+    background: linear-gradient(
+    180deg, #cfe6fb, #9cd3fb
+    );
 }
 
-/*  ALERT SUKSES  */
+/* =========================================
+ALERT SUKSES
+========================================= */
+
 .alert-success {
     max-width: 750px;
     margin: 0 auto 30px;
@@ -524,43 +668,49 @@ label.choice:has(input:checked) {
     font-size: 15px;
 }
 
-/*SUMMARY CARD */
+/* =========================================
+SUMMARY CARD
+========================================= */
 .summary-card {
-    max-width: 750px;
+    max-width: 650px;
     margin: 0 auto;
     background: white;
     border-radius: 18px;
-    padding: 40px;
+    padding: 25px;
     box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
     border: 1px solid #e1edf7;
 }
 
 .summary-list {
-    display: grid;
-    grid-template-columns: 180px 1fr;
-    row-gap: 14px;
-    column-gap: 20px;
+    display: block;
 }
 
 .summary-list dt {
-    font-weight: 700;
+    margin: 8px 0 0;
+    padding: 8px 14px 0;
+    background: #e8f3fd;
+    border-left: 4px solid #1769aa;
+    border-radius: 12px 12px 0 0;
     color: #123c69;
-    font-size: 13.5px;
+    font-size: 12.5px;
+    font-weight: 700;
 }
 
 .summary-list dd {
+    margin: 0;
+    padding: 0 14px 8px;
+    background: #e8f3fd;
+    border-left: 4px solid #1769aa;
+    border-radius: 0 0 12px 12px;
     color: #455a64;
-    font-size: 14px;
-    padding-bottom: 14px;
-    border-bottom: 1px solid #e9eef3;
+    font-size: 13px;
+    min-height: 16px;
     word-break: break-word;
 }
+/* =========================================
+BUTTON KEMBALI
+========================================= */
 
-.summary-list dt:not(:first-of-type) {
-    padding-top: 14px;
-}
-
-/* BUTTON KEMBALI*/
 .btn-link {
     display: inline-block;
     margin-top: 28px;
@@ -579,7 +729,10 @@ label.choice:has(input:checked) {
     transform: translateY(-2px);
 }
 
-/*FOOTER*/
+/* =========================================
+FOOTER
+========================================= */
+
 footer {
     padding: 30px 20px;
     text-align: center;
@@ -588,11 +741,15 @@ footer {
     font-weight: 500;
 }
 
-/* HALAMAN KALKULATOR (fee-calculator.php)*/
+/* =========================================
+HALAMAN KALKULATOR
+========================================= */
 
 .calculator-page {
     padding: 60px 0 80px;
-    background: linear-gradient(180deg, #cfe6fb, #9cd3fb);
+    background: linear-gradient(
+    180deg, #cfe6fb, #9cd3fb
+    );
 }
 
 .calculator-card {
@@ -622,6 +779,8 @@ footer {
     color: #1769aa;
 }
 
+/* FEE TABLE */
+
 .fee-table {
     width: 100%;
     border-collapse: separate;
@@ -632,7 +791,9 @@ footer {
 }
 
 .fee-table th {
-    background: linear-gradient(135deg, #123c69, #1769aa);
+    background: linear-gradient(
+    135deg, #123c69, #1769aa
+    );
     color: white;
     padding: 16px 20px;
     text-align: left;
@@ -642,8 +803,7 @@ footer {
     text-transform: uppercase;
 }
 
-.fee-table th:last-child,
-.fee-table td:last-child {
+.fee-table th:last-child, .fee-table td:last-child {
     text-align: right;
 }
 
@@ -668,7 +828,7 @@ footer {
 }
 
 .fee-table .row-discount td {
-    color: #d7cbef;
+    color: #7c6aa5;
 }
 
 .fee-table .row-total {
@@ -688,59 +848,1054 @@ footer {
     margin-top: 30px;
 }
 
-@media (max-width: 600px) {
-    .calculator-card { padding: 25px 18px; border-radius: 14px; }
-    .calculator-card h1 { font-size: 24px; }
-    .fee-table th, .fee-table td { padding: 12px 14px; font-size: 13.5px; }
-    .fee-table .row-total td { font-size: 15px; }
+/* =========================================
+HALAMAN DAFTAR P6 (register.php)  [TAMBAHAN]
+========================================= */
+
+/* Pembungkus form + fasilitas, melanjutkan warna .page-intro */
+.form-page {
+    padding: 10px 6% 80px;
+    background: linear-gradient(
+    180deg, #9cd3fb, #cfe6fb
+    );
 }
 
-/*  RESPONSIVE TABLET*/
+.form-page .form-card {
+    margin: 0 auto 30px;
+}
+
+/* Kartu fasilitas */
+.facility-card {
+    max-width: 750px;
+    margin: 0 auto;
+    background: white;
+    border-radius: 18px;
+    padding: 30px 40px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+    border: 1px solid #e1edf7;
+}
+
+.facility-card h2 {
+    font-family: "Sora", "Segoe UI", Arial, sans-serif;
+    color: #123c69;
+    font-size: 22px;
+    font-weight: 800;
+    margin-bottom: 16px;
+}
+
+.facility-list {
+    list-style: none;
+    padding: 0;
+    display: grid;
+    gap: 10px;
+}
+
+.facility-list li {
+    position: relative;
+    padding: 12px 16px 12px 48px;
+    background: #f7fbff;
+    border: 1.5px solid #e1edf7;
+    border-radius: 10px;
+    color: #455a64;
+    font-weight: 500;
+    font-size: 14.5px;
+}
+
+.facility-list li::before {
+    content: "\2713";
+    position: absolute;
+    left: 14px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    background: #1769aa;
+    color: white;
+    font-size: 12px;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* =========================================
+RESPONSIVE TABLET
+========================================= */
+
 @media (max-width: 900px) {
-    .nav-wrap { gap: 15px; }
-    .site-header nav a { font-size: 13px; }
-    #hero h1 { font-size: 40px; }
-    #keunggulan article { width: 47%; }
-    #katalog { overflow-x: auto; }
-    #katalog table { min-width: 750px; }
-    .form-card { padding: 30px 25px; }
-    .summary-card { padding: 30px 25px; }
+
+    /* HEADER */
+
+    .nav-wrap {
+        padding: 16px 5%;
+    }
+
+    .site-header nav {
+        padding: 0 5%;
+        gap: 20px;
+        overflow-x: auto;
+        justify-content:space-between;
+        scrollbar-width: none;
+    }
+
+    .site-header nav::-webkit-scrollbar {
+        display: none;
+    }
+
+    .site-header nav a {
+        white-space: nowrap;
+        font-size: 13px;
+        flex-shrink: 0;
+    }
+
+    /* HERO */
+
+    #hero h1 {
+        font-size: 40px;
+    }
+
+    /* KEUNGGULAN */
+
+    #keunggulan article {
+        width: 47%;
+    }
+
+    /* KATALOG */
+
+    #katalog {
+        overflow-x: auto;
+    }
+
+    #katalog table {
+        min-width: 750px;
+    }
+
+    /* FORM */
+
+    .form-card {
+        padding: 30px 25px;
+    }
+
+    /* SUMMARY */
+
+    .summary-card {
+        padding: 30px 25px;
+    }
 }
 
-/*  RESPONSIVE HP  */
+/* =========================================
+RESPONSIVE HP
+========================================= */
+
 @media (max-width: 600px) {
-    .site-header { padding: 15px 0; }
-    .nav-wrap { flex-wrap: wrap; justify-content: center; }
-    .site-header .brand { width: 100%; text-align: center; margin-right: 0; margin-bottom: 10px; }
-    .site-header nav a { font-size: 12px; }
 
-    #hero { min-height: 500px; padding: 80px 7%; }
-    #hero h1 { font-size: 34px; }
-    #hero p { font-size: 16px; }
+    /* HEADER */
 
-    section { padding: 60px 6%; }
-    section h2 { font-size: 27px; }
-    #keunggulan article { width: 100%; margin: 0 0 20px 0; }
-
-    .page-intro { padding: 45px 6% 30px; }
-    .page-intro h1 { font-size: 26px; }
-
-    #alur { border-radius: 16px; }
-    #alur li { padding-left: 70px; }
-
-    .form-card { padding: 25px 18px; border-radius: 14px; margin: 25px auto 50px; }
-
-    .form-grid { flex-direction: column; gap: 0; }
-
-    fieldset.form-group { flex-direction: column; align-items: stretch; }
-    label.choice { width: 100%; }
-
-    .alert-success { padding: 22px 18px; }
-    .summary-card { padding: 25px 18px; }
-    .summary-list {
-        grid-template-columns: 1fr;
-        row-gap: 4px;
+    .site-header {
+        position: relative;
     }
-    .summary-list dd { padding-bottom: 14px; }
-    .summary-list dt:not(:first-of-type) { padding-top: 10px; }
+
+    .nav-wrap {
+        min-height: 70px;
+        padding: 15px 6%;
+        justify-content: center;
+    }
+
+    .site-header .brand {
+        width: 100%;
+        justify-content: center;
+        text-align: center;
+        font-size: 19px;
+    }
+
+    .site-header nav {
+        min-height: 46px;
+        padding: 0 6%;
+        gap: 22px;
+        justify-content: flex-start;
+        overflow-x: auto;
+        scrollbar-width: none;
+    }
+
+    .site-header nav::-webkit-scrollbar {
+        display: none;
+    }
+
+    .site-header nav a {
+        flex-shrink: 0;
+        font-size: 12px;
+        padding: 12px 0;
+    }
+
+    .site-header nav a.nav-cta {
+        padding: 8px 14px;
+    }
+
+    /* HERO */
+
+    #hero {
+        min-height: 500px;
+        padding: 80px 7%;
+    }
+
+    #hero h1 {
+        font-size: 34px;
+    }
+
+    #hero p {
+        font-size: 16px;
+    }
+
+    /* SECTION */
+
+    section {
+        padding: 60px 6%;
+    }
+
+    section h2 {
+        font-size: 27px;
+    }
+
+    /* KEUNGGULAN */
+
+    #keunggulan article {
+        width: 100%;
+        margin: 0 0 20px 0;
+    }
+
+    /* PAGE INTRO */
+
+    .page-intro {
+        padding: 45px 6% 30px;
+    }
+
+    .page-intro h1 {
+        font-size: 26px;
+    }
+
+    /* ALUR */
+
+    #alur {
+        border-radius: 16px;
+    }
+
+    #alur li {
+        padding-left: 70px;
+    }
+
+    /* FORM */
+
+    .form-card {
+        padding: 25px 18px;
+        border-radius: 14px;
+        margin: 25px auto 50px;
+    }
+
+    .form-grid {
+        flex-direction: column;
+        gap: 0;
+    }
+
+    fieldset.form-group {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    label.choice {
+        width: 100%;
+    }
+
+    /* FORM P6 + FASILITAS [TAMBAHAN] */
+
+    .form-page {
+        padding: 10px 5% 60px;
+    }
+
+    .form-page .form-card {
+        margin: 0 auto 25px;
+    }
+
+    .facility-card {
+        padding: 22px 18px;
+        border-radius: 14px;
+    }
+
+    /* ALERT */
+
+    .alert-success {
+        padding: 22px 18px;
+    }
+
+    /* SUMMARY */
+    .summary-card {
+        padding: 18px 14px;
+    }
+    .summary-list dt {
+        padding: 8px 12px 0;
+        font-size: 12px;
+    }
+    .summary-list dd {
+        padding: 0 12px 8px;
+        font-size: 13px;
+    }
+
+    /* CALCULATOR */
+    .calculator-card {
+        padding: 25px 18px;
+        border-radius: 14px;
+    }
+    .calculator-card h1 {
+        font-size: 24px;
+    }
+    .fee-table th, .fee-table td {
+        padding: 12px 14px;
+        font-size: 13.5px;
+    }
+    .fee-table .row-total td {
+        font-size: 15px;
+    }
+}
+
+/* ---------- Menu atas (<nav> langsung di bawah <body>) ---------- */
+
+body > nav {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 6px 28px;
+    min-height: 60px;
+    padding: 0 8%;
+    background: linear-gradient(
+    135deg, #123c69, #1769aa
+    );
+    box-shadow: 0 4px 18px rgba(0, 0, 0, 0.15);
+}
+
+body > nav a {
+    color: white;
+    text-decoration: none;
+    font-size: 13.5px;
+    font-weight: 600;
+    letter-spacing: 0.01em;
+    padding: 12px 0;
+    border-bottom: 2px solid transparent;
+    transition: 0.25s ease;
+}
+
+body > nav a:hover {
+    color: #8ee7ff;
+    border-bottom-color: #8ee7ff;
+}
+
+/* ---------- Kartu putih pembungkus halaman yang berisi tabel ---------- */
+
+main.container:has(> table) {
+    max-width: 830px;
+    margin: 40px auto 80px;
+    padding: 40px;
+    background: white;
+    border-radius: 18px;
+    border: 1px solid #e1edf7;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+}
+
+main.container:has(> table) > h1 {
+    color: #123c69;
+    font-size: 30px;
+    font-weight: 800;
+    margin-bottom: 24px;
+}
+
+/* ---------- Tabel ---------- */
+
+main.container > table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+    border-radius: 15px;
+    overflow: hidden;
+    border: 1px solid #e1edf7;
+}
+
+main.container > table th {
+    background: linear-gradient(
+    135deg, #123c69, #1769aa
+    );
+    color: white;
+    padding: 16px 20px;
+    text-align: left;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
+}
+
+main.container > table td {
+    padding: 16px 20px;
+    border-bottom: 1px solid #e9eef3;
+    color: #455a64;
+    font-weight: 500;
+    font-size: 15px;
+}
+
+/* Kolom No: sempit dan rata tengah */
+
+main.container > table th:first-child, main.container > table td:first-child {
+    width: 60px;
+    text-align: center;
+}
+
+/* Kolom Total: rata kanan dan tebal */
+
+main.container > table th:last-child, main.container > table td:last-child {
+    text-align: right;
+    white-space: nowrap;
+}
+
+main.container > table td:last-child {
+    color: #123c69;
+    font-weight: 700;
+}
+
+main.container > table tbody tr:nth-child(even) {
+    background: #f7fbff;
+}
+
+main.container > table tbody tr {
+    transition: 0.25s ease;
+}
+
+main.container > table tbody tr:hover {
+    background: #eef9ff;
+}
+
+main.container > table tbody tr:last-child td {
+    border-bottom: none;
+}
+
+/* ---------- HP ---------- */
+
+@media (max-width: 600px) {
+
+    body > nav {
+        justify-content: flex-start;
+        gap: 6px 20px;
+        padding: 8px 6%;
+    }
+
+    main.container:has(> table) {
+        margin: 25px 5% 50px;
+        padding: 25px 18px;
+        border-radius: 14px;
+    }
+
+    main.container:has(> table) > h1 {
+        font-size: 24px;
+    }
+
+    main.container > table th, main.container > table td {
+        padding: 12px 14px;
+        font-size: 13.5px;
+    }
+}
+
+/* =========================================
+TOMBOL AKSI FORM DAFTAR P6  [TAMBAHAN]
+(Proses Pendaftaran / History Dummy / Loop Lab)
+========================================= */
+
+.form-actions {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 12px;
+    margin-top: 10px;
+}
+
+/* Tiga tombol sama gaya dan sejajar */
+.form-actions .btn-primary, .form-actions .btn-action {
+    display: inline-block;
+    width: auto;
+    margin-top: 0;
+    padding: 14px 26px;
+    border: none;
+    border-radius: 10px;
+    background: linear-gradient(
+    135deg, #123c69, #1769aa
+    );
+    color: white;
+    font-family: inherit;
+    font-size: 15px;
+    font-weight: 700;
+    line-height: 1.4;
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+    box-shadow: 0 6px 18px rgba(23, 105, 170, 0.25);
+    transition: all 0.3s ease;
+}
+
+.form-actions .btn-primary:hover, .form-actions .btn-action:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 24px rgba(23, 105, 170, 0.35);
+    background: linear-gradient(
+    135deg, #1769aa, #123c69
+    );
+}
+
+#media {
+    text-align: center;
+}
+
+#media img, #media video {
+    display: block;
+    margin: 0 auto 24px;
+    max-width: 100%;
+    height: auto;
+    border-radius: 14px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+}
+
+#media h3 {
+    margin: 10px 0 14px;
+    color: #123c69;
+}
+
+/* Kartu putih pembungkus */
+main.container:has(> p > b) {
+    max-width: 750px;
+    margin: 40px auto 80px;
+    padding: 40px;
+    background: white;
+    border-radius: 18px;
+    border: 1px solid #e1edf7;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+}
+
+/* Judul "Pendaftaran Berhasil Diproses" sebagai banner sukses */
+main.container:has(> p > b) > h1 {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin-bottom: 26px;
+    padding: 18px 22px;
+    background: #eaf6ff;
+    border: 1px solid #bfe3fb;
+    border-left: 5px solid #1769aa;
+    border-radius: 14px;
+    color: #123c69;
+    font-size: 24px;
+    font-weight: 800;
+    line-height: 1.3;
+}
+
+main.container:has(> p > b) > h1::before {
+    content: "\2713";
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background: #1769aa;
+    color: white;
+    font-size: 18px;
+    font-weight: 700;
+}
+
+/* Semua paragraf menjadi baris dengan garis pemisah */
+main.container:has(> p > b) > p {
+    margin: 0;
+    padding: 12px 0;
+    border-bottom: 1px solid #e9eef3;
+    color: #455a64;
+    font-size: 15px;
+}
+
+/* Baris data: label di kiri, isi di kanan */
+main.container:has(> p > b) > p:has(> b) {
+    display: grid;
+    grid-template-columns: 170px 1fr;
+    column-gap: 20px;
+    word-break: break-word;
+}
+
+main.container:has(> p > b) > p > b {
+    color: #123c69;
+    font-weight: 700;
+    font-size: 13.5px;
+}
+
+/* Baris "Total akhir": satu <b> penuh, dibuat menonjol */
+main.container:has(> p > b) > p:has(> b:only-child) {
+    display: block;
+    margin-top: 14px;
+    padding: 16px 20px;
+    background: #e3f2fd;
+    border: none;
+    border-top: 2px solid #1769aa;
+    border-radius: 12px;
+}
+
+main.container:has(> p > b) > p > b:only-child {
+    color: #123c69;
+    font-size: 18px;
+    font-weight: 800;
+}
+
+/* Sub-judul: Rincian Biaya, Minat */
+main.container:has(> p > b) > h2 {
+    margin: 30px 0 10px;
+    padding-left: 12px;
+    border-left: 4px solid #1769aa;
+    color: #123c69;
+    font-size: 20px;
+    font-weight: 800;
+    line-height: 1.3;
+}
+
+/* Daftar minat menjadi kartu kecil dengan centang */
+main.container:has(> p > b) > ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+main.container:has(> p > b) > ul > li {
+    position: relative;
+    margin-bottom: 8px;
+    padding: 10px 14px 10px 44px;
+    background: #f7fbff;
+    border: 1.5px solid #e1edf7;
+    border-radius: 10px;
+    color: #455a64;
+    font-weight: 500;
+    font-size: 14.5px;
+}
+
+main.container:has(> p > b) > ul > li::before {
+    content: "\2713";
+    position: absolute;
+    left: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    background: #1769aa;
+    color: white;
+    font-size: 12px;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Link "Daftar lagi" menjadi tombol */
+main.container:has(> p > b) > a {
+    display: inline-block;
+    margin-top: 26px;
+    padding: 12px 22px;
+    border-radius: 10px;
+    background: #1769aa;
+    color: white;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 14px;
+    transition: 0.3s ease;
+}
+
+main.container:has(> p > b) > a:hover {
+    background: #123c69;
+    transform: translateY(-2px);
+}
+
+@media (max-width: 600px) {
+
+    main.container:has(> p > b) {
+        margin: 25px 5% 50px;
+        padding: 25px 18px;
+        border-radius: 14px;
+    }
+
+    main.container:has(> p > b) > h1 {
+        padding: 14px 16px;
+        font-size: 19px;
+    }
+
+    main.container:has(> p > b) > p:has(> b) {
+        grid-template-columns: 1fr;
+        row-gap: 2px;
+    }
+}
+.extra-actions {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    margin-top: 16px;
+}
+
+.btn-secondary {
+    display: inline-block;
+    min-width: 140px;
+    text-align: center;
+    padding: 12px 24px;
+    border: 2px solid #1e4f8f;
+    border-radius: 30px;
+    color: #1e4f8f;
+    font-weight: 700;
+    text-decoration: none;
+    background: transparent;
+}
+
+.btn-secondary:hover {
+    background: #1e4f8f;
+    color: #fff;
+}
+#kontak, #kontak p, #kontak address, #kontak ul, #kontak li {
+    text-align: center;
+}
+
+#kontak ul {
+    list-style: none;
+    padding: 0;
+}
+
+#kontak address {
+    font-style: normal;
+}
+
+/* =========================================
+   EXTRA ACTIONS / TOMBOL TAMBAHAN
+   ========================================= */
+
+.extra-actions {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    gap: 12px;
+    margin-top: 24px;
+}
+
+/* Style kedua tombol */
+.extra-actions .btn-link,
+.extra-actions .btn-secondary {
+    display: inline-block;
+    margin-top: 0;
+    min-width: 120px;
+    padding: 10px 22px;
+    border-radius: 10px;
+    font-size: 14px;
+    font-weight: 700;
+    text-align: center;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+/* =========================================
+   TOMBOL LINK - TRANSPARAN
+   ========================================= */
+
+.extra-actions .btn-link {
+    background: transparent;
+    color: #1769aa;
+    border: 2px solid #1769aa;
+}
+
+.extra-actions .btn-link:hover {
+    background: #1769aa;
+    color: #ffffff;
+    border-color: #1769aa;
+    transform: translateY(-2px);
+}
+
+/* =========================================
+   TOMBOL SECONDARY - TRANSPARAN
+   ========================================= */
+
+.extra-actions .btn-secondary {
+    background: transparent;
+    color: #1769aa;
+    border: 2px solid #1769aa;
+}
+
+.extra-actions .btn-secondary:hover {
+    background: #1769aa;
+    color: #ffffff;
+    border-color: #1769aa;
+    transform: translateY(-2px);
+}
+
+/* =========================================
+   EFEK SAAT TOMBOL DITEKAN
+   ========================================= */
+
+.extra-actions .btn-link:active,
+.extra-actions .btn-secondary:active {
+    transform: translateY(0);
+}
+/* =========================================
+   RESPONSIVE HP - SEMUA TOMBOL
+========================================= */
+
+@media (max-width: 600px) {
+
+    /* Semua tombol dan link yang berbentuk tombol */
+    button,
+    input[type="submit"],
+    input[type="button"],
+    input[type="reset"],
+    .btn,
+    .btn-link,
+    .btn-secondary,
+    .btn-primary,
+    .nav-cta,
+    a[class*="btn"],
+    a[class*="button"] {
+        box-sizing: border-box;
+        min-height: 44px;
+        padding: 11px 18px;
+        border-radius: 10px;
+        font-size: 14px;
+        line-height: 1.2;
+        text-align: center;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        vertical-align: middle;
+        white-space: nowrap;
+    }
+
+
+    /* =========================================
+       CONTAINER TOMBOL
+    ========================================= */
+
+    .actions,
+    .button-group,
+    .btn-group,
+    .button-actions,
+    .page-actions,
+    .form-actions,
+    .extra-actions {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        gap: 10px;
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+
+    /* =========================================
+       TOMBOL DALAM CONTAINER
+    ========================================= */
+
+    .actions .btn,
+    .actions button,
+    .actions a,
+    .button-group .btn,
+    .button-group button,
+    .button-group a,
+    .btn-group .btn,
+    .btn-group button,
+    .btn-group a,
+    .button-actions .btn,
+    .button-actions button,
+    .button-actions a,
+    .page-actions .btn,
+    .page-actions button,
+    .page-actions a,
+    .form-actions .btn,
+    .form-actions button,
+    .form-actions a,
+    .extra-actions .btn,
+    .extra-actions button,
+    .extra-actions a {
+        margin: 0;
+    }
+
+
+    /* =========================================
+       EXTRA ACTIONS
+    ========================================= */
+
+    .extra-actions {
+        justify-content: flex-start;
+    }
+
+    .extra-actions .btn-link,
+    .extra-actions .btn-secondary {
+        min-width: 120px;
+    }
+
+
+    /* =========================================
+       TOMBOL FORM
+    ========================================= */
+
+    form button,
+    form input[type="submit"],
+    form input[type="button"],
+    form .btn {
+        min-height: 46px;
+    }
+
+
+    /* =========================================
+       TOMBOL UTAMA
+    ========================================= */
+
+    .btn-primary,
+    .btn-main,
+    .btn-submit {
+        min-height: 46px;
+        font-weight: 600;
+    }
+
+
+    /* =========================================
+       TOMBOL FULL WIDTH
+       Untuk tombol yang memang memenuhi area
+    ========================================= */
+
+    .full-width-btn,
+    .btn-full,
+    form .submit-btn {
+        width: 100%;
+    }
+
+
+    /* =========================================
+       TOMBOL DI HERO
+    ========================================= */
+
+    #hero .btn,
+    #hero button,
+    #hero a[class*="btn"] {
+        min-height: 46px;
+    }
+
+
+    /* =========================================
+       TOMBOL NAVIGASI
+    ========================================= */
+
+    .site-header nav .nav-cta {
+        width: auto;
+        min-height: 38px;
+        padding: 8px 15px;
+        flex-shrink: 0;
+    }
+
+
+    /* =========================================
+       TOMBOL DI CARD
+    ========================================= */
+
+    .card .btn,
+    .course-card .btn,
+    .facility-card .btn,
+    .calculator-card .btn,
+    .summary-card .btn {
+        margin-top: 10px;
+    }
+
+
+    /* =========================================
+       JIKA TOMBOL HANYA 1
+    ========================================= */
+
+    .actions:has(> :only-child),
+    .button-group:has(> :only-child),
+    .page-actions:has(> :only-child),
+    .form-actions:has(> :only-child) {
+        justify-content: flex-start;
+    }
+
+
+    /* =========================================
+       2 TOMBOL - TETAP SEJAJAR
+    ========================================= */
+
+    .actions.two-buttons,
+    .button-group.two-buttons,
+    .btn-group.two-buttons,
+    .page-actions.two-buttons {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 10px;
+    }
+
+    .actions.two-buttons .btn,
+    .button-group.two-buttons .btn,
+    .btn-group.two-buttons .btn,
+    .page-actions.two-buttons .btn {
+        width: 100%;
+    }
+    .actions,
+    .button-group,
+    .btn-group,
+    .button-actions,
+    .page-actions,
+    .form-actions,
+    .extra-actions {
+        overflow: visible;
+    }
+
+    button,
+    input[type="submit"],
+    input[type="button"],
+    .btn,
+    .btn-link,
+    .btn-secondary,
+    .btn-primary {
+        max-width: 100%;
+    }
+}
+.rincian-biaya {
+    margin-top: 25px;
+    margin-bottom: 25px;
+    border: 1px solid #e2e8f0;
+    border-radius: 12px;
+    overflow: hidden;
+    background: #ffffff;
+}
+
+.rincian-biaya h3 {
+    margin: 0;
+    padding: 16px 18px;
+    font-size: 18px;
+    color: #263238;
+    background: #f4f7fb;
+}
+
+.biaya-row {
+    display: flex;
+    align-items: center;
+    padding: 15px 18px;
+    border-top: 1px solid #e5e7eb;
+    font-size: 14px;
+}
+
+.biaya-row span {
+    color: #374151;
+}
+
+.biaya-total {
+    display: flex;
+    align-items: center;
+    padding: 17px 18px;
+    background: #e6f7f1;
+    border-top: 1px solid #d1eee5;
+    font-weight: 700;
+}
+
+.biaya-total span {
+    color: #147d6f;
+    font-size: 14px;
 }

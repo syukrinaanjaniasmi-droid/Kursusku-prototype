@@ -89,7 +89,22 @@
     </select>
 </div>
 <fieldset class="form-group">
+<div class="rincian-biaya">
+    <h3>Rincian Biaya</h3>
+    <div class="biaya-row">
+        <span>Biaya satuan</span>
+    </div>
+    <div class="biaya-row">
+        <span>Subtotal</span>
+    </div>
+    <div class="biaya-row">
+        <span>Diskon</span>
+    </div>
+    <div class="biaya-total">
+        <span>TOTAL AKHIR</span>
+    </div>
 
+</div>
     <legend>Jenis Peserta</legend>
 
     <label class="choice">
