@@ -1756,13 +1756,6 @@ main.container:has(> p > b) > a:hover {
         min-height: 46px;
         font-weight: 600;
     }
-
-
-    /* =========================================
-       TOMBOL FULL WIDTH
-       Untuk tombol yang memang memenuhi area
-    ========================================= */
-
     .full-width-btn,
     .btn-full,
     form .submit-btn {

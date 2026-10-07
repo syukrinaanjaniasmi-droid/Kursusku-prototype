@@ -334,10 +334,6 @@
             </table>
         </div>
 
-        <div class="footer">
-            KursusKu UIN &copy; <?= date('Y') ?>
-        </div>
-
     </div>
 </div>
 
