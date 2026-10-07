@@ -91,6 +91,7 @@ $courses = [
                 <a href="registration.php">Form P5</a>
                 <a href="register.php">Daftar P6</a>
                 <a href="history.php">History</a>
+                <a href="test-matrix.php">Tes Matrik</a>
 
 </nav>
 
