@@ -2250,3 +2250,219 @@ Jika sebelumnya sudah menempel versi lama bitwise-page.css, HAPUS dulu versi lam
 .utility-card a:hover {
     background: #1d4ed8;
 }
+.logic-card {
+    max-width: 640px;
+    margin: 2rem auto;
+    padding: 2rem;
+    background: #ffffff;
+    border-radius: 16px;
+    box-shadow: 0 8px 24px rgba(15, 60, 110, 0.12);
+}
+
+.logic-card h1 {
+    margin: 0 0 0.5rem;
+    color: #12315f;
+    font-size: 1.75rem;
+}
+
+.logic-card p {
+    margin: 0 0 1.25rem;
+    color: #4a5b73;
+}
+
+.logic-inputs {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    margin-bottom: 1.5rem;
+}
+
+.logic-inputs span {
+    padding: 0.5rem 1rem;
+    background: #e8f1fb;
+    border-left: 4px solid #1b6cb5;
+    border-radius: 8px;
+    color: #12315f;
+}
+
+.logic-result {
+    margin-bottom: 1.25rem;
+}
+
+.logic-result h2 {
+    margin: 0 0 0.5rem;
+    font-size: 1rem;
+    font-family: Consolas, "Courier New", monospace;
+    color: #1b6cb5;
+}
+
+.dump {
+    margin: 0;
+    padding: 0.9rem 1.1rem;
+    background: #12315f;
+    color: #e8f1fb;
+    border-radius: 10px;
+    font-family: Consolas, "Courier New", monospace;
+    font-size: 1rem;
+    overflow-x: auto;
+}
+/* ===== Variabel ===== */
+:root {
+    --bg-1: #0f172a;
+    --bg-2: #312e81;
+    --card-bg: rgba(255, 255, 255, 0.08);
+    --card-border: rgba(255, 255, 255, 0.18);
+    --text: #f8fafc;
+    --muted: #a5b4fc;
+    --accent: #22d3ee;
+    --accent-2: #818cf8;
+    --ok: #34d399;
+    --no: #f87171;
+    --radius: 20px;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: "Segoe UI", system-ui, -apple-system, Roboto, Arial, sans-serif;
+    line-height: 1.5;
+    color: var(--text);
+    background: linear-gradient(135deg, var(--bg-1), var(--bg-2));
+    background-attachment: fixed;
+}
+
+/* ===== Halaman utilitas ===== */
+.utility-page {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+.utility-card {
+    width: 100%;
+    max-width: 520px;
+    padding: 32px 28px;
+    background: var(--card-bg);
+    border: 1px solid var(--card-border);
+    border-radius: var(--radius);
+    box-shadow: 0 25px 60px rgba(0, 0, 0, 0.45);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+}
+
+.utility-card h1 {
+    margin: 0 0 24px;
+    font-size: 1.8rem;
+    letter-spacing: 0.5px;
+    background: linear-gradient(90deg, var(--accent), var(--accent-2));
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+/* ===== Daftar hasil ===== */
+.utility-card ul {
+    margin: 0 0 28px;
+    padding: 0;
+    list-style: none;
+    display: grid;
+    gap: 12px;
+}
+
+.utility-card li {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    padding: 14px 16px;
+    background: rgba(255, 255, 255, 0.06);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-left: 4px solid var(--accent);
+    border-radius: 12px;
+    transition: transform 0.2s ease, background 0.2s ease;
+}
+
+.utility-card li:hover {
+    transform: translateX(4px);
+    background: rgba(255, 255, 255, 0.12);
+}
+
+.label {
+    color: var(--muted);
+    font-size: 0.95rem;
+}
+
+.value {
+    font-weight: 700;
+    text-align: right;
+}
+
+/* Badge true / false */
+.value.is-true,
+.value.is-false {
+    padding: 3px 12px;
+    border-radius: 999px;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.value.is-true {
+    color: var(--ok);
+    background: rgba(52, 211, 153, 0.15);
+    border: 1px solid rgba(52, 211, 153, 0.4);
+}
+
+.value.is-false {
+    color: var(--no);
+    background: rgba(248, 113, 113, 0.15);
+    border: 1px solid rgba(248, 113, 113, 0.4);
+}
+
+/* ===== Tombol kembali ===== */
+.utility-card a {
+    display: block;
+    padding: 12px 18px;
+    text-align: center;
+    text-decoration: none;
+    font-weight: 600;
+    color: #0f172a;
+    background: linear-gradient(90deg, var(--accent), var(--accent-2));
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(34, 211, 238, 0.25);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.utility-card a:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 12px 28px rgba(34, 211, 238, 0.4);
+}
+
+.utility-card a:focus-visible {
+    outline: 3px solid rgba(255, 255, 255, 0.6);
+    outline-offset: 3px;
+}
+
+/* ===== Mobile ===== */
+@media (max-width: 480px) {
+    .utility-card {
+        padding: 24px 18px;
+    }
+
+    .utility-card li {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 4px;
+    }
+
+    .value {
+        text-align: left;
+    }
+}
