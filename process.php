@@ -45,9 +45,10 @@ if (!in_array($learningMode, ['offline', 'online', 'hybrid'], true)) {
 if (!in_array($packageCount, [1, 2, 3], true)) {
     $errors[] = 'Jumlah paket tidak valid.';
 }
-
 if ($errors !== []) {
+    http_response_code(422);
     ?>
+    
     <!doctype html>
     <html lang="id">
     <head>
