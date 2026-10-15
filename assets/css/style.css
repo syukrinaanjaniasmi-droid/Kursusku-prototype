@@ -2087,3 +2087,166 @@ Warna & font mengikuti tema KursusKu
         font-size: 21px;
     }
 }
+/* =========================================
+TAMBAHAN UNTUK bitwise-test.php
+Tempel di bawah isi utility-page.css (paling bawah style.css).
+Jika sebelumnya sudah menempel versi lama bitwise-page.css, HAPUS dulu versi lama itu.
+========================================= */
+
+/* ---------- Tabel izin ---------- */
+
+.utility-card .perm-table {
+    width: 100%;
+    min-width: 560px;
+    border-collapse: separate;
+    border-spacing: 0;
+}
+
+.utility-card .perm-table th {
+    padding: 16px 20px;
+    background: linear-gradient(135deg, #123c69, #1769aa);
+    color: white;
+    text-align: left;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 0.03em;
+}
+
+.utility-card .perm-table td {
+    padding: 18px 20px;
+    border-bottom: 1px solid #e9eef3;
+    color: #455a64;
+    font-size: 15px;
+    font-weight: 500;
+}
+
+.utility-card .perm-table tbody tr:last-child td {
+    border-bottom: none;
+}
+
+.utility-card .perm-table tbody tr:hover {
+    background: #eef9ff;
+}
+
+/* ---------- Badge status dengan titik ---------- */
+
+.utility-card .status {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 6px 14px;
+    border-radius: 30px;
+    font-size: 13px;
+    font-weight: 700;
+}
+
+.utility-card .status::before {
+    content: "";
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: currentColor;
+}
+
+.utility-card .status-ok {
+    background: #dff8ea;
+    color: #16834b;
+}
+
+.utility-card .status-no {
+    background: #ffe4e4;
+    color: #b91c1c;
+}
+
+/* ---------- Output var_dump ---------- */
+
+.utility-card .output-label {
+    margin: 28px 0 10px;
+}
+
+.utility-card pre {
+    margin: 0 0 24px;
+    color: #455a64;
+    font-family: Consolas, "Courier New", monospace;
+    font-size: 14px;
+    line-height: 1.9;
+}
+
+/* ---------- Tombol Kembali berbentuk pill ---------- */
+
+.utility-card .button {
+    min-width: 130px;
+    padding: 14px 28px;
+    border-radius: 999px;
+    text-align: center;
+}
+
+@media (max-width: 600px) {
+    .utility-card .perm-table th,
+    .utility-card .perm-table td {
+        padding: 12px 14px;
+        font-size: 13.5px;
+    }
+}
+/* ===== Halaman utilitas (String Test) ===== */
+.utility-page,
+.utility-page * {
+    box-sizing: border-box;
+}
+
+.utility-page {
+    margin: 0;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 24px;
+    font-family: "Segoe UI", Tahoma, Arial, sans-serif;
+    line-height: 1.6;
+    color: #1f2937;
+    background: linear-gradient(135deg, #e0e7ff, #f3f4f6);
+}
+
+.utility-card {
+    width: 100%;
+    max-width: 480px;
+    padding: 32px;
+    background: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+}
+
+.utility-card h1 {
+    margin: 0 0 16px;
+    font-size: 1.5rem;
+    color: #111827;
+}
+
+.utility-card ul {
+    margin: 0 0 24px;
+    padding: 0;
+    list-style: none;
+}
+
+.utility-card li {
+    padding: 10px 0;
+    border-bottom: 1px solid #e5e7eb;
+}
+
+.utility-card li:last-child {
+    border-bottom: none;
+}
+
+.utility-card a {
+    display: inline-block;
+    padding: 8px 16px;
+    background: #2563eb;
+    color: #ffffff;
+    text-decoration: none;
+    border-radius: 6px;
+    transition: background 0.2s;
+}
+
+.utility-card a:hover {
+    background: #1d4ed8;
+}
