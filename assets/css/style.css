@@ -1892,3 +1892,105 @@ main.container:has(> p > b) > a:hover {
     color: #147d6f;
     font-size: 14px;
 }
+
+/* ===== Halaman utilitas (server-time.php) =====
+   Tempel di bagian paling bawah assets/css/style.css.
+   Semua selector di-scope ke .utility-page agar halaman lain tidak terpengaruh. */
+
+.utility-page {
+  min-height: 100vh;
+  margin: 0;
+  padding: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "Segoe UI", system-ui, -apple-system, Arial, sans-serif;
+  line-height: 1.6;
+  color: #1e293b;
+  background: linear-gradient(135deg, #e0f2fe, #f1f5f9);
+}
+
+.utility-card {
+  width: 100%;
+  max-width: 640px;
+  padding: 36px 32px;
+  background: #ffffff;
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(15, 23, 42, 0.12);
+}
+
+.utility-card .eyebrow {
+  display: inline-block;
+  margin-bottom: 14px;
+  padding: 4px 12px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 1.5px;
+  color: #0369a1;
+  background: #e0f2fe;
+  border-radius: 999px;
+}
+
+.utility-card h1 {
+  margin: 0 0 20px;
+  font-size: 2rem;
+  line-height: 1.25;
+  color: #0f172a;
+}
+
+.utility-card p {
+  margin: 0 0 20px;
+  color: #475569;
+}
+
+.utility-card .server-time {
+  padding: 16px 20px;
+  font-size: 1.1rem;
+  color: #1e293b;
+  background: #f0f9ff;
+  border-left: 5px solid #0284c7;
+  border-radius: 8px;
+}
+
+.utility-card .server-time strong {
+  display: block;
+  margin-top: 4px;
+  font-family: Consolas, "Courier New", monospace;
+  font-size: 1.6rem;
+  color: #0369a1;
+}
+
+.utility-card code {
+  padding: 2px 6px;
+  font-family: Consolas, "Courier New", monospace;
+  font-size: 0.9em;
+  color: #be123c;
+  background: #f1f5f9;
+  border-radius: 4px;
+}
+
+.utility-card .button {
+  display: inline-block;
+  padding: 10px 20px;
+  font-weight: 600;
+  text-decoration: none;
+  color: #ffffff;
+  background: #0284c7;
+  border-radius: 8px;
+  transition: background 0.2s, transform 0.2s;
+}
+
+.utility-card .button:hover {
+  background: #0369a1;
+  transform: translateY(-2px);
+}
+
+@media (max-width: 480px) {
+  .utility-card {
+    padding: 24px 20px;
+  }
+
+  .utility-card h1 {
+    font-size: 1.5rem;
+  }
+}
