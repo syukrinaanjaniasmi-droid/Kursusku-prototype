@@ -7,7 +7,11 @@ $history = [
     ['name' => 'Bima',  'course' => 'PHP Dasar',     'total' => 212500],
     ['name' => 'Citra', 'course' => 'Laravel Dasar', 'total' => 350000],
 ];
-$history = array_merge($history, $_SESSION['history'] ?? []);
+
+$registrations = array_merge(
+    $registrations,
+    $_SESSION['history'] ?? []
+);
 ?>
 
 <!doctype html>
