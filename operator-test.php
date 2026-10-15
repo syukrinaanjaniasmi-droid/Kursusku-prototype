@@ -1,7 +1,6 @@
 <?php
 declare(strict_types=1);
 
-// Helper: escape output & format
 function e(string $value): string
 {
     return htmlspecialchars($value, ENT_QUOTES, 'UTF-8');
@@ -17,17 +16,14 @@ function boolText(bool $value): string
     return $value ? 'true' : 'false';
 }
 
-// Data
 $fee          = 350000;
 $participants = 2;
 
-// Perhitungan
 $subtotal           = $fee * $participants;
 $comparisonPositive = $fee > 0;
 $comparisonStrict   = $fee === 350000;
 $message            = 'Biaya: ' . rupiah($fee);
 
-// Hasil yang ditampilkan
 $results = [
     'Perkalian'      => rupiah($subtotal),
     'Comparison > 0' => boolText($comparisonPositive),
