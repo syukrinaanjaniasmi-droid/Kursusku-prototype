@@ -1,8 +1,9 @@
+```php
 <?php
 session_start();
 require_once __DIR__ . '/helpers.php';
 
-$history = [
+$registrations = [
     ['name' => 'Alya',  'course' => 'Web Dasar',     'total' => 160000],
     ['name' => 'Bima',  'course' => 'PHP Dasar',     'total' => 212500],
     ['name' => 'Citra', 'course' => 'Laravel Dasar', 'total' => 350000],
@@ -23,7 +24,7 @@ $registrations = array_merge(
     <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
-    
+
 <main class="container">
     <h1>History Pendaftaran (Dummy)</h1>
 
@@ -37,7 +38,7 @@ $registrations = array_merge(
             </tr>
         </thead>
         <tbody>
-            <?php foreach ($history as $index => $item): ?>
+            <?php foreach ($registrations as $index => $item): ?>
                 <tr>
                     <td><?= $index + 1 ?></td>
                     <td><?= e($item['name']) ?></td>
@@ -47,6 +48,7 @@ $registrations = array_merge(
             <?php endforeach; ?>
         </tbody>
     </table>
+
     <div class="extra-actions">
         <a href="index.php" class="btn-secondary">Beranda</a>
         <a href="register.php" class="btn-secondary">Daftar Kursus</a>
@@ -55,3 +57,4 @@ $registrations = array_merge(
 
 </body>
 </html>
+```
