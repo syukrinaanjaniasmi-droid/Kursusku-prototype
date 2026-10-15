@@ -28,7 +28,7 @@
 </section>
 
 <section class="form-card">
-    <form action="process-registration.php" method="get" class="registration-form">
+    <form action="process-registration.php" method="post" class="registration-form">
         <input type="hidden" name="source" value="week-05">
 <div class="form-group">
     <label for="name">Nama Lengkap</label>
